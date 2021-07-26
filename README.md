@@ -1,2 +1,2 @@
 # blog
-blog for wangshitou
+[wangshitou's blog](https://www.iwangsen.com)
