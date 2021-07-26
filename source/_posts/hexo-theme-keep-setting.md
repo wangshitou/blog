@@ -32,4 +32,10 @@ npm install hexo-generator-search --save
 在站点的根目录下执行以下命令：
 npm install hexo-generator-searchdb --save
 
+
+github代码提交
+remote: error: GH007: Your push would publish a private email address.
+在GitHub的你账号网页上右上角，个人的登录退出的位置，找到setting：
+setting->emails->Keep my email address private，把这一项去掉勾选即可。
+
 ```
