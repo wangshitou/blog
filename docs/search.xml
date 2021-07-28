@@ -1,49 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>hexo-theme-keep主题的设置</title>
-      <link href="/2021/07/26/hexo-theme-keep-setting/"/>
-      <url>/2021/07/26/hexo-theme-keep-setting/</url>
-      
-        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">安装hexo-theme-keep主题</span><br><span class="line">git clone https://github.com/XPoet/hexo-theme-keep themes/keep</span><br><span class="line"></span><br><span class="line">修改配置文件主题设置为keep</span><br><span class="line">theme: keep</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">开启标签功能</span><br><span class="line">theme-keep配置文件开启</span><br><span class="line">tag:</span><br><span class="line">    enable: true</span><br><span class="line">根目录运行命令，生成tags首页文件</span><br><span class="line">hexo n page tags</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">开启搜索功能</span><br><span class="line">Hexo 之 Local Search</span><br><span class="line">Hexo提供的Local Search,原理是通过hexo-generator-search插件在本地生成一个search.xml文件，搜索的时候从这个文件中根据关键字检索出相应的链接。</span><br><span class="line">安装步骤</span><br><span class="line">安装 hexo-generator-search</span><br><span class="line">在站点的根目录下执行以下命令：</span><br><span class="line">npm install hexo-generator-search --save</span><br><span class="line"></span><br><span class="line">安装 hexo-generator-searchdb</span><br><span class="line">在站点的根目录下执行以下命令：</span><br><span class="line">npm install hexo-generator-searchdb --save</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">github代码提交</span><br><span class="line">remote: error: GH007: Your push would publish a private email address.</span><br><span class="line">在GitHub的你账号网页上右上角，个人的登录退出的位置，找到setting：</span><br><span class="line">setting-&gt;emails-&gt;Keep my email address private，把这一项去掉勾选即可。</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> hexo </tag>
-            
-            <tag> hexo-theme-keep </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>CentOS端口设置</title>
-      <link href="/2019/08/11/iptables-port/"/>
-      <url>/2019/08/11/iptables-port/</url>
-      
-        <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/etc/sysconfig/iptables</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Firewall configuration written by system-config-securitylevel</span></span><br><span class="line"><span class="comment"># Manual customization of this file is not recommended.</span></span><br><span class="line">*filter</span><br><span class="line">:INPUT DROP [0:0]</span><br><span class="line">:FORWARD ACCEPT [0:0]</span><br><span class="line">:OUTPUT ACCEPT [0:0]</span><br><span class="line">:syn-flood - [0:0]</span><br><span class="line">-A INPUT -i lo -j ACCEPT</span><br><span class="line">-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line">-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT</span><br><span class="line">-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT</span><br><span class="line">-A INPUT -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT</span><br><span class="line">-A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT</span><br><span class="line">-A INPUT -p icmp -m <span class="built_in">limit</span> --<span class="built_in">limit</span> 1/sec --limit-burst 10 -j ACCEPT</span><br><span class="line">-A INPUT -f -m <span class="built_in">limit</span> --<span class="built_in">limit</span> 100/sec --limit-burst 100 -j ACCEPT</span><br><span class="line">-A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j syn-flood</span><br><span class="line">-A INPUT -j REJECT --reject-with icmp-host-prohibited</span><br><span class="line">-A syn-flood -p tcp -m <span class="built_in">limit</span> --<span class="built_in">limit</span> 3/sec --limit-burst 6 -j RETURN</span><br><span class="line">-A syn-flood -j REJECT --reject-with icmp-port-unreachable</span><br><span class="line">COMMIT</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">service iptables restart</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> centos </tag>
-            
-            <tag> iptables </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title>CentOS端口设置</title>
+    <url>/2019/08/11/iptables-port/</url>
+    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/etc/sysconfig/iptables</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Firewall configuration written by system-config-securitylevel</span></span><br><span class="line"><span class="comment"># Manual customization of this file is not recommended.</span></span><br><span class="line">*filter</span><br><span class="line">:INPUT DROP [0:0]</span><br><span class="line">:FORWARD ACCEPT [0:0]</span><br><span class="line">:OUTPUT ACCEPT [0:0]</span><br><span class="line">:syn-flood - [0:0]</span><br><span class="line">-A INPUT -i lo -j ACCEPT</span><br><span class="line">-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line">-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT</span><br><span class="line">-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT</span><br><span class="line">-A INPUT -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT</span><br><span class="line">-A INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT</span><br><span class="line">-A INPUT -p icmp -m <span class="built_in">limit</span> --<span class="built_in">limit</span> 1/sec --limit-burst 10 -j ACCEPT</span><br><span class="line">-A INPUT -f -m <span class="built_in">limit</span> --<span class="built_in">limit</span> 100/sec --limit-burst 100 -j ACCEPT</span><br><span class="line">-A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j syn-flood</span><br><span class="line">-A INPUT -j REJECT --reject-with icmp-host-prohibited</span><br><span class="line">-A syn-flood -p tcp -m <span class="built_in">limit</span> --<span class="built_in">limit</span> 3/sec --limit-burst 6 -j RETURN</span><br><span class="line">-A syn-flood -j REJECT --reject-with icmp-port-unreachable</span><br><span class="line">COMMIT</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">service iptables restart</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>centos</tag>
+        <tag>iptables</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo-theme-keep主题的设置</title>
+    <url>/2021/07/26/hexo-theme-keep-setting/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">安装hexo-theme-keep主题</span><br><span class="line">git clone https://github.com/XPoet/hexo-theme-keep themes/keep</span><br><span class="line"></span><br><span class="line">修改配置文件主题设置为keep</span><br><span class="line">theme: keep</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">开启标签功能</span><br><span class="line">theme-keep配置文件开启</span><br><span class="line">tag:</span><br><span class="line">    enable: true</span><br><span class="line">根目录运行命令，生成tags首页文件</span><br><span class="line">hexo n page tags</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">开启搜索功能</span><br><span class="line">Hexo 之 Local Search</span><br><span class="line">Hexo提供的Local Search,原理是通过hexo-generator-search插件在本地生成一个search.xml文件，搜索的时候从这个文件中根据关键字检索出相应的链接。</span><br><span class="line">安装步骤</span><br><span class="line">安装 hexo-generator-search</span><br><span class="line">在站点的根目录下执行以下命令：</span><br><span class="line">npm install hexo-generator-search --save</span><br><span class="line"></span><br><span class="line">安装 hexo-generator-searchdb</span><br><span class="line">在站点的根目录下执行以下命令：</span><br><span class="line">npm install hexo-generator-searchdb --save</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">github代码提交</span><br><span class="line">remote: error: GH007: Your push would publish a private email address.</span><br><span class="line">在GitHub的你账号网页上右上角，个人的登录退出的位置，找到setting：</span><br><span class="line">setting-&gt;emails-&gt;Keep my email address private，把这一项去掉勾选即可。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>hexo-theme-keep</tag>
+      </tags>
+  </entry>
 </search>
